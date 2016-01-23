@@ -1616,8 +1616,8 @@ static void getX86TargetFeatures(const Driver &D, const llvm::Triple &Triple,
   // Add features to be compatible with gcc for Android.
   if (Triple.getEnvironment() == llvm::Triple::Android) {
     if (Triple.getArch() == llvm::Triple::x86_64) {
-      Features.push_back("+sse4.2");
-      Features.push_back("+popcnt");
+      Features.push_back("-sse4.2");
+      Features.push_back("-popcnt");
     } else
       Features.push_back("+ssse3");
   }
